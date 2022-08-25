@@ -1,10 +1,5 @@
-var http = require('http');
-var static = require('node-static');
-var file = new static.Server('./build'); // production??? 
-let port = 8080;
+const express = require("express");
+const path = require("path");
+const app = express();
 
-http.createServer(function(req, res) {
-  file.serve(req, res);
-}).listen(port);
-
-console.log(`Server running on port ${port}`);
+app.use(express.static(path.resolve(__dirname, "./build")));
