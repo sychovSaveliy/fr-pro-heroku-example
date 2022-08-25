@@ -52,6 +52,8 @@ function App(props) {
     //     time: Date.now()
     //   })
     // }, 3000)
+
+    console.log(process.env);
   }, [])
 
   const onListMutate = useCallback(listMutationCallback(store), [])
